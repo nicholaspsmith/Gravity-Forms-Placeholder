@@ -5,7 +5,7 @@ $('form[id^=gform]').each(function(id,el) {
   $(el).find('.gfield_label').each(function(lbl_id,lbl_el) {
     var text;
     text = $(lbl_el).text();
-    if (text.contains('*')) {// Get rid of *'s for required fields
+    if (text.indexOf('*') > -1) {// Get rid of *'s for required fields
       text = text.substr(0,text.length-1);
     }
     $input = $(lbl_el).next().find('>input');
